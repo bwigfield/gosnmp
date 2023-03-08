@@ -355,6 +355,10 @@ func (x *GoSNMP) netConnect() error {
 	return err
 }
 
+func (x *GoSNMP) ValidateParameters() error {
+	return x.validateParameters()
+}
+
 func (x *GoSNMP) validateParameters() error {
 	if x.Transport == "" {
 		x.Transport = udp
