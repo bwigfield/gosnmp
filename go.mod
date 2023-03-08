@@ -1,4 +1,4 @@
-module github.com/gosnmp/gosnmp
+module github.com/bwigfield/gosnmp
 
 go 1.17
 
