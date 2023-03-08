@@ -172,6 +172,11 @@ func (x *GoSNMP) negotiateInitialSecurityParameters(packetOut *SnmpPacket) error
 }
 
 // save the connection security parameters after a request/response
+func (x *GoSNMP) StoreSecurityParameters(result *SnmpPacket) error {
+	return x.storeSecurityParameters(result)
+}
+
+// save the connection security parameters after a request/response
 func (x *GoSNMP) storeSecurityParameters(result *SnmpPacket) error {
 	if x.Version != Version3 || result.Version != Version3 {
 		return fmt.Errorf("storeParameters called with non Version3 connection or packet")
