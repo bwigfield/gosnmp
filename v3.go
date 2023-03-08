@@ -58,6 +58,7 @@ type SnmpV3SecurityParameters interface {
 	encryptPacket(scopedPdu []byte) ([]byte, error)
 	decryptPacket(packet []byte, cursor int) ([]byte, error)
 	initSecurityKeys() error
+	InitSecurityKeys() error
 }
 
 func (x *GoSNMP) validateParametersV3() error {
