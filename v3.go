@@ -189,6 +189,11 @@ func (x *GoSNMP) storeSecurityParameters(result *SnmpPacket) error {
 }
 
 // update packet security parameters to match connection security parameters
+func (x *GoSNMP) UpdatePktSecurityParameters(packetOut *SnmpPacket) error {
+	return UpdatePktSecurityParameters(packetOut)
+}
+
+// update packet security parameters to match connection security parameters
 func (x *GoSNMP) updatePktSecurityParameters(packetOut *SnmpPacket) error {
 	if x.Version != Version3 || packetOut.Version != Version3 {
 		return fmt.Errorf("updatePktSecurityParameters called with non Version3 connection or packet")
