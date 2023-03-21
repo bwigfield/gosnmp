@@ -196,7 +196,7 @@ func (x *GoSNMP) storeSecurityParameters(result *SnmpPacket) error {
 
 // update packet security parameters to match connection security parameters
 func (x *GoSNMP) UpdatePktSecurityParameters(packetOut *SnmpPacket) error {
-	return updatePktSecurityParameters(packetOut)
+	return x.updatePktSecurityParameters(packetOut)
 }
 
 // update packet security parameters to match connection security parameters
