@@ -987,6 +987,9 @@ func marshalVarbind(pdu *SnmpPDU) ([]byte, error) {
 }
 
 // -- Unmarshalling Logic ------------------------------------------------------
+func (x *GoSNMP) UnmarshalHeader(packet []byte, response *SnmpPacket) (int, error) {
+	return x. unmarshalHeader(packet, response)
+}
 
 func (x *GoSNMP) unmarshalHeader(packet []byte, response *SnmpPacket) (int, error) {
 	if len(packet) < 2 {
